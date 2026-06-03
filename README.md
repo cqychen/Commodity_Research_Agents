@@ -148,6 +148,11 @@ src/futures_research_agents/prompts/
 
 线上使用时应直接读取 `*_manifest.json`，加载 `*.pkl` 和保存的特征参数，对最新基本面和行情特征做同口径转换后预测。
 
+## 回测样例结果
+<div align="center">
+  <img src="output/egg/figures/equity_curve.png" alt="回测结果" width="800">
+</div>
+
 ## 沙箱实验
 
 沙箱用于让 Agent 在受控目录中自动生成和执行实验代码，但不直接修改正式项目代码。`bash run.sh` 的 full 流程会自动执行一次 `model_experiment` 沙箱实验；如果 Qwen/`langchain-openai` 可用，会优先使用大模型生成 `experiment.py`，否则回退到内置模板，保证一键流程不中断。
