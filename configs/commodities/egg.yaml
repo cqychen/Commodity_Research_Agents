@@ -1,0 +1,24 @@
+commodity_id: egg
+display_name: 鸡蛋
+fut_code: JD
+exchange: DCE
+prefix: egg
+standalone: true
+# Optional bootstrap reference only. The full workflow does not depend on this path.
+existing_system_path: ../鸡蛋/light_rf_calendar_v3_trading_system
+contract_multiplier: 10
+commission_per_hand: 6.0
+slippage_per_hand: 2.0
+min_entry_volume: 1000
+min_entry_oi: 5000
+delist_buffer_days: 20
+train_end: "2021-12-31"
+valid_end: "2023-12-31"
+calendar_states:
+  - 近远月强弱
+  - 年度周期
+  - 季节性需求
+  - 天气产蛋率
+fundamental_anchor:
+  field: 蛋鸡：存栏数：中国（月）
+  rule: 月末发布归属当月，次月前几天发布仍归属上月

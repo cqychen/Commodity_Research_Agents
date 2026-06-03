@@ -1,0 +1,9 @@
+{
+  "run_id": "20260603_155430_egg_egg_auto_model_experiment",
+  "commodity_id": "egg",
+  "experiment_type": "model_experiment",
+  "experiment_name": "egg_auto_model_experiment",
+  "code_source": "llm_qwen_http",
+  "llm_error": null,
+  "sandbox_only": true
+}

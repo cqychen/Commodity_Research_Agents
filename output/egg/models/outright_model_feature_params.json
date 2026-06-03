@@ -1,0 +1,14 @@
+{
+  "means": {
+    "inventory_pressure": 3.176018518518519,
+    "basis_strength": -305.4537037037037,
+    "profit_cycle": 23.721209538621196,
+    "hv20_1y_pct": 0.5687297912992357
+  },
+  "stds": {
+    "inventory_pressure": 1.078916586051519,
+    "basis_strength": 533.7421069632242,
+    "profit_cycle": 22.328385721025388,
+    "hv20_1y_pct": 0.2718791945724865
+  }
+}

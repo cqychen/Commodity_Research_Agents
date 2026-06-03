@@ -1,0 +1,9 @@
+{
+  "run_id": "20260603_155121_egg_egg_auto_model_experiment",
+  "commodity_id": "egg",
+  "experiment_type": "model_experiment",
+  "experiment_name": "egg_auto_model_experiment",
+  "code_source": "template_fallback",
+  "llm_error": "llm_unavailable_or_dependency_missing",
+  "sandbox_only": true
+}

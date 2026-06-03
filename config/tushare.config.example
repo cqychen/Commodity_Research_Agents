@@ -1,0 +1,3 @@
+# Copy this file to `config/tushare.config` and fill your token.
+# Keep `config/tushare.config` out of version control if the project is published.
+TOKEN = "your_tushare_token"

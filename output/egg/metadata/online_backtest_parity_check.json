@@ -1,0 +1,17 @@
+{
+  "available": true,
+  "source_stats": "/home/ubuntu/farmer/china_mm_index/鸡蛋/light_rf_calendar_v3_trading_system/output/egg_backtest_stats.csv",
+  "local_stats": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/tables/combined_backtest_stats.csv",
+  "copied_online_result": false,
+  "metric_differences": {
+    "total_return": -0.0912630000000001,
+    "annual_return": -0.0106755261847149,
+    "annual_vol": 0.09874298156957831,
+    "sharpe": -0.5264400108524052,
+    "max_drawdown": -0.2036685380840016,
+    "trade_count": 0.0,
+    "total_cost": -11632.0,
+    "win_rate": -0.03708211685592655
+  },
+  "max_abs_difference": 11632.0
+}

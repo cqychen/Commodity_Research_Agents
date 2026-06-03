@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "policy_ok": true,
+  "recommend_promotion": true,
+  "result": {
+    "experiment_name": "smoke_feature_test",
+    "experiment_type": "feature_experiment",
+    "success": true,
+    "candidate_feature": "inventory_pressure",
+    "metric_delta": -0.5264400108524052,
+    "generated_files": [],
+    "policy_checked": true
+  },
+  "stderr_preview": ""
+}

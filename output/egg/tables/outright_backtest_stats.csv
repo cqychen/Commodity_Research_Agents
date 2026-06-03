@@ -1,0 +1,2 @@
+start,end,total_return,annual_return,annual_vol,sharpe,max_drawdown,trade_count,total_cost,win_rate,strategy
+2019-04-01,2026-04-30,0.993376,0.10233696607815546,0.11788229836353739,0.8681283576823242,-0.2110198466291001,110,39264.0,0.5200364298724954,light_rf_single_leg

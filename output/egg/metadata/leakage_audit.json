@@ -1,0 +1,26 @@
+{
+  "leakage_ok": true,
+  "checks": [
+    {
+      "name": "fundamental_asof",
+      "passed": true
+    },
+    {
+      "name": "feature_spec_declared",
+      "passed": true
+    },
+    {
+      "name": "tradable_targets_declared",
+      "passed": true
+    },
+    {
+      "name": "test_set_sealed",
+      "passed": true
+    },
+    {
+      "name": "continuous_not_label",
+      "passed": true
+    }
+  ],
+  "violations": []
+}

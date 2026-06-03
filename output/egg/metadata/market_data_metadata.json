@@ -1,0 +1,9 @@
+{
+  "commodity_id": "egg",
+  "fut_code": "JD",
+  "refresh_market_requested": false,
+  "cache_dir": "data/cache/egg",
+  "latest_signal_available": true,
+  "execution_blocker_count": 0,
+  "tushare_refresh": null
+}

@@ -1,0 +1,2 @@
+commodity_id,fut_code,selected_expression,target_position,direction,degrade_level,source,watch_status
+egg,JD,calendar_spread,1.0,long,正常交易,generated_by_latest_trade_agent,monitor_next_signal

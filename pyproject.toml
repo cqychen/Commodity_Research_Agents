@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "single-commodity-research-agents"
+version = "0.1.0"
+description = "LangGraph-style multi-agent workflow for single commodity futures research"
+requires-python = ">=3.9"
+dependencies = [
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "pydantic",
+  "pyyaml",
+]
+
+[project.optional-dependencies]
+agent = [
+  "langgraph",
+  "langchain-openai",
+]
+refresh = ["tushare"]
+pdf = ["reportlab"]
+test = ["pytest"]
+
+[project.scripts]
+futures-research-agents = "futures_research_agents.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["futures_research_agents*"]

@@ -1,0 +1,12 @@
+{
+  "commodity_id": "egg",
+  "fut_code": "JD",
+  "token_source": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/config/tushare.config",
+  "success": true,
+  "cache_dir": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/data/cache/egg",
+  "all_contract_daily": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/data/cache/egg/JD_all_contract_daily.csv",
+  "continuous": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/data/cache/egg/JD_continuous.csv",
+  "contracts": 153,
+  "daily_rows": 21552,
+  "max_trade_date": "2026-06-02"
+}

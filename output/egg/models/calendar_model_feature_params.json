@@ -1,0 +1,12 @@
+{
+  "means": {
+    "basis_strength": -305.4537037037037,
+    "inventory_pressure": 3.176018518518519,
+    "hv20_1y_pct": 0.5687297912992357
+  },
+  "stds": {
+    "basis_strength": 533.7421069632242,
+    "inventory_pressure": 1.078916586051519,
+    "hv20_1y_pct": 0.2718791945724865
+  }
+}

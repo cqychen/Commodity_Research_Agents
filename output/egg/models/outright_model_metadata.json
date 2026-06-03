@@ -1,0 +1,10 @@
+{
+  "commodity_id": "egg",
+  "fut_code": "JD",
+  "model_name": "outright_model",
+  "model_family": "frozen_linear_baseline",
+  "train_end": "2021-12-31",
+  "valid_end": "2023-12-31",
+  "target": "future_1m_tradable_contract_return",
+  "usage": "load model bundle, transform latest features with saved params, then predict"
+}

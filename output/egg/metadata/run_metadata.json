@@ -1,0 +1,44 @@
+{
+  "commodity_id": "egg",
+  "mode": "full",
+  "commodity_meta": {
+    "commodity_id": "egg",
+    "display_name": "鸡蛋",
+    "fut_code": "JD",
+    "exchange": "DCE",
+    "prefix": "egg",
+    "train_end": "2021-12-31",
+    "valid_end": "2023-12-31",
+    "calendar_states": [
+      "近远月强弱",
+      "年度周期",
+      "季节性需求",
+      "天气产蛋率"
+    ]
+  },
+  "latest_trade": {
+    "latest_instruction": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/latest/latest_instruction.csv",
+    "latest_actionable_trade": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/latest/latest_actionable_trade.csv",
+    "next_signal_watch": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/latest/next_signal_watch.csv",
+    "market_data_metadata": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/metadata/market_data_metadata.json",
+    "execution_blockers": [],
+    "actionable": true
+  },
+  "scorecard": {
+    "total_score": 76.6,
+    "scores": {
+      "data_quality": 85,
+      "feature_explainability": 82,
+      "leakage_reliability": 85,
+      "outright_model_stability": 70,
+      "calendar_model_stability": 70,
+      "signal_quality": 72,
+      "tradability": 80,
+      "risk_control": 70,
+      "latest_signal_confidence": 72,
+      "maintainability": 80
+    },
+    "verdict": "有条件通过，需要记录风险并继续观察"
+  },
+  "errors": []
+}

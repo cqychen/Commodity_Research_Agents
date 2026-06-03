@@ -1,0 +1,7 @@
+{
+  "run_id": "20260603_152436_egg_smoke_feature_test",
+  "commodity_id": "egg",
+  "experiment_type": "feature_experiment",
+  "experiment_name": "smoke_feature_test",
+  "sandbox_only": true
+}

@@ -1,0 +1,6 @@
+{
+  "model": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/models/outright_model.pkl",
+  "feature_params": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/models/outright_model_feature_params.json",
+  "selected_features": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/models/outright_model_selected_features.json",
+  "metadata": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/models/outright_model_metadata.json"
+}

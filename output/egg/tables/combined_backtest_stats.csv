@@ -1,0 +1,2 @@
+start,end,total_return,annual_return,annual_vol,sharpe,max_drawdown,trade_count,total_cost,win_rate,strategy
+2019-02-01,2026-06-02,1.0073759999999998,0.0997026172636375,0.2086500482895818,0.47784612599399906,-0.33146305169895296,106,26704.0,0.4804202483285578,independent_single_contract_daily_backtest

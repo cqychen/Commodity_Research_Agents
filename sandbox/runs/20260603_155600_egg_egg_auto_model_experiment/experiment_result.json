@@ -1,0 +1,31 @@
+{
+  "experiment_name": "egg_auto_model_experiment",
+  "experiment_type": "model_experiment",
+  "success": true,
+  "candidate_model": {
+    "type": "auto_ensemble",
+    "features_used": [
+      "inventory_pressure",
+      "basis_strength",
+      "profit_cycle",
+      "hv20_1y_pct"
+    ],
+    "feature_weights": {
+      "inventory_pressure": 0.3,
+      "basis_strength": 0.3,
+      "profit_cycle": 0.25,
+      "hv20_1y_pct": 0.15
+    },
+    "target_signals": [
+      "outright",
+      "calendar"
+    ],
+    "risk_filter_enabled": true,
+    "lag_handling": "aligned_by_lag_months"
+  },
+  "metric_delta": 0.022,
+  "generated_files": [
+    "experiment_result.json"
+  ],
+  "policy_checked": true
+}

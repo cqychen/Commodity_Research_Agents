@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "policy_ok": true,
+  "recommend_promotion": true,
+  "result": {
+    "experiment_name": "inventory_cross_test",
+    "experiment_type": "feature_experiment",
+    "success": true,
+    "baseline_feature_count": 4,
+    "candidate_feature": {
+      "name": "inventory_basis_cross",
+      "source": "derived",
+      "function": "valuation_driver_cross",
+      "direction": "higher_is_bullish_when_low_inventory",
+      "use_for": [
+        "outright",
+        "calendar",
+        "state"
+      ],
+      "note": "库存压力与基差强弱交叉，用于验证低库存深贴水或高库存高升水状态。"
+    },
+    "metric_delta": {
+      "feature_coverage": 1
+    },
+    "generated_files": [
+      "experiment_result.json"
+    ],
+    "policy_checked": true
+  },
+  "stderr_preview": ""
+}

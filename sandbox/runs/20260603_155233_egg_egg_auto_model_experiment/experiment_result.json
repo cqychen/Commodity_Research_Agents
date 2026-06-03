@@ -1,0 +1,14 @@
+{
+  "experiment_name": "egg_auto_model_experiment",
+  "experiment_type": "model_experiment",
+  "success": true,
+  "baseline_model": "unknown",
+  "candidate_model": "ridge_with_inventory_basis_cross",
+  "metric_delta": {
+    "validation_stability_score": 0.01
+  },
+  "generated_files": [
+    "experiment_result.json"
+  ],
+  "policy_checked": true
+}

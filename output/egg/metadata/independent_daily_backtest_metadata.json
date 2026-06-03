@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "rows": 1047,
+  "round_trip_count": 53,
+  "trade_event_count": 106,
+  "initial_capital": 1000000.0,
+  "effective_leverage": 0.9,
+  "signal_thresholds": {
+    "long_mm_index_gt": 52.5,
+    "short_mm_index_lt": 48.0
+  },
+  "copied_online_result": false
+}

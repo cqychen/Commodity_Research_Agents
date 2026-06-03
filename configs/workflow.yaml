@@ -1,0 +1,12 @@
+default_mode: explain-existing
+output_root: output
+data_root: data
+gates:
+  require_feature_spec: true
+  require_leakage_audit: true
+  require_latest_trade_files: true
+  require_reports: true
+reporting:
+  make_figures: true
+  make_pdf: true
+  pdf_engine: reportlab_optional

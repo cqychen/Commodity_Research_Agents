@@ -1,0 +1,29 @@
+{
+  "experiment_name": "egg_auto_model_experiment",
+  "experiment_type": "model_experiment",
+  "success": true,
+  "candidate_model": {
+    "model_type": "ensemble",
+    "base_models": [
+      "xgboost",
+      "lightgbm",
+      "linear"
+    ],
+    "feature_names": [
+      "inventory_pressure",
+      "basis_strength",
+      "profit_cycle",
+      "hv20_1y_pct"
+    ],
+    "target": "outright_return_1m",
+    "validation_method": "rolling_walk_forward",
+    "hyperparameter_tuning": "optuna",
+    "use_calendar_features": false,
+    "use_outright_features": true
+  },
+  "metric_delta": 0.008,
+  "generated_files": [
+    "experiment_result.json"
+  ],
+  "policy_checked": false
+}

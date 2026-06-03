@@ -1,0 +1,6 @@
+commodity: egg
+mode: explain-existing
+refresh_market: false
+notes:
+  - 读取现有鸡蛋交易系统输出。
+  - 生成多 agent 研究报告、最新交易解释、品种评分卡和验收报告。

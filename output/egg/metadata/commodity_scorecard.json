@@ -1,0 +1,16 @@
+{
+  "total_score": 76.6,
+  "scores": {
+    "data_quality": 85,
+    "feature_explainability": 82,
+    "leakage_reliability": 85,
+    "outright_model_stability": 70,
+    "calendar_model_stability": 70,
+    "signal_quality": 72,
+    "tradability": 80,
+    "risk_control": 70,
+    "latest_signal_confidence": 72,
+    "maintainability": 80
+  },
+  "verdict": "有条件通过，需要记录风险并继续观察"
+}

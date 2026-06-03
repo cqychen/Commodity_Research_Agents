@@ -1,0 +1,256 @@
+{
+  "commodity_id": "egg",
+  "mode": "full",
+  "refresh_market": false,
+  "project_root": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents",
+  "commodity_meta": {
+    "commodity_id": "egg",
+    "display_name": "鸡蛋",
+    "fut_code": "JD",
+    "exchange": "DCE",
+    "prefix": "egg",
+    "train_end": "2021-12-31",
+    "valid_end": "2023-12-31",
+    "calendar_states": [
+      "近远月强弱",
+      "年度周期",
+      "季节性需求",
+      "天气产蛋率"
+    ]
+  },
+  "output_dirs": {
+    "latest": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/latest",
+    "tables": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/tables",
+    "figures": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/figures",
+    "reports": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/reports",
+    "metadata": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/metadata",
+    "models": "/home/ubuntu/farmer/china_mm_index/single_commodity_research_agents/output/egg/models"
+  },
+  "docs_loaded": [
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/README.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/01_总流程.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/02_特征研究流程.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/03_双模型体系.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/04_行情目标与波动率.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/05_建模与防穿越.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/06_回测与交易信号.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/07_研究目录与交易系统.md",
+    "/home/ubuntu/farmer/china_mm_index/公用文档/单品种期货研究流程/08_复盘验收与多品种扩展.md"
+  ],
+  "prompt_templates": [
+    "backtest_report_agent",
+    "calendar_model_agent",
+    "code_writing_agent",
+    "commodity_scorecard_agent",
+    "data_dictionary_agent",
+    "experiment_evaluator_agent",
+    "feature_study_agent",
+    "hypothesis_agent",
+    "latest_trade_execution_agent",
+    "leakage_audit_agent",
+    "outright_model_agent",
+    "project_intake_agent",
+    "promotion_agent",
+    "report_and_acceptance_agent",
+    "signal_synthesis_agent",
+    "target_builder_agent"
+  ],
+  "hypothesis_db": [
+    {
+      "hypothesis": "低库存 + 深贴水时，期货具备多头赔率。",
+      "direction": "bullish",
+      "expression": "outright_or_bull_calendar",
+      "evidence_fields": [
+        "inventory",
+        "basis",
+        "term_structure"
+      ],
+      "counter_evidence": [
+        "库存回升",
+        "基差转弱",
+        "需求淡季"
+      ]
+    },
+    {
+      "hypothesis": "高库存 + 高升水时，期货估值偏高，优先偏空。",
+      "direction": "bearish",
+      "expression": "outright_or_bear_calendar",
+      "evidence_fields": [
+        "inventory",
+        "basis",
+        "warehouse_receipts"
+      ],
+      "counter_evidence": [
+        "库存快速下降",
+        "远月供给收缩",
+        "现货强势"
+      ]
+    },
+    {
+      "hypothesis": "近远月强弱、季节和年度周期清晰时，跨期表达优先于单边。",
+      "direction": "relative_value",
+      "expression": "calendar_spread",
+      "evidence_fields": [
+        "basis_raw",
+        "calendar_spread",
+        "seasonality"
+      ],
+      "counter_evidence": [
+        "两腿流动性不足",
+        "交割风险上升"
+      ]
+    }
+  ],
+  "data_dict": {
+    "fundamentals": {
+      "raw_dir": "data/fundamentals/egg/raw",
+      "latest_dir": "data/fundamentals/egg/latest",
+      "processed_dir": "data/fundamentals/egg/processed",
+      "publish_date_rule": "第一列优先视为 publish_date，月频按公布日 as-of 对齐。"
+    },
+    "market": {
+      "daily_contracts": "data/market/egg/daily_contracts",
+      "continuous": "data/market/egg/continuous",
+      "basis": "data/market/egg/basis",
+      "cache": "data/cache/egg"
+    },
+    "asof_rules": "每个信号月只能使用信号日前已经公布的产业数据和当时可见行情。"
+  },
+  "feature_spec": [
+    {
+      "name": "inventory_pressure",
+      "source": "industry",
+      "function": "driver/risk",
+      "direction": "higher_is_bearish",
+      "use_for": [
+        "outright",
+        "calendar",
+        "state"
+      ],
+      "lag_months": 0,
+      "note": "库存压力用于验证供需矛盾和多头风险。"
+    },
+    {
+      "name": "basis_strength",
+      "source": "basis",
+      "function": "valuation",
+      "direction": "higher_is_bullish",
+      "use_for": [
+        "outright",
+        "calendar",
+        "state"
+      ],
+      "lag_months": 0,
+      "note": "基差用于判断期货升贴水和期限结构赔率。"
+    },
+    {
+      "name": "profit_cycle",
+      "source": "industry",
+      "function": "driver",
+      "direction": "higher_is_bearish_forward_supply",
+      "use_for": [
+        "outright",
+        "calendar"
+      ],
+      "lag_months": 1,
+      "note": "利润影响后续供给扩张或收缩。"
+    },
+    {
+      "name": "hv20_1y_pct",
+      "source": "futures",
+      "function": "risk",
+      "direction": "higher_reduces_position",
+      "use_for": [
+        "filter",
+        "risk"
+      ],
+      "lag_months": 0,
+      "note": "高波动环境下执行前降仓。"
+    }
+  ],
+  "field_cards": [
+    {
+      "name": "inventory_pressure",
+      "source": "industry",
+      "function": "driver/risk",
+      "direction": "higher_is_bearish",
+      "use_for": [
+        "outright",
+        "calendar",
+        "state"
+      ],
+      "lag_months": 0,
+      "note": "库存压力用于验证供需矛盾和多头风险。"
+    },
+    {
+      "name": "basis_strength",
+      "source": "basis",
+      "function": "valuation",
+      "direction": "higher_is_bullish",
+      "use_for": [
+        "outright",
+        "calendar",
+        "state"
+      ],
+      "lag_months": 0,
+      "note": "基差用于判断期货升贴水和期限结构赔率。"
+    },
+    {
+      "name": "profit_cycle",
+      "source": "industry",
+      "function": "driver",
+      "direction": "higher_is_bearish_forward_supply",
+      "use_for": [
+        "outright",
+        "calendar"
+      ],
+      "lag_months": 1,
+      "note": "利润影响后续供给扩张或收缩。"
+    },
+    {
+      "name": "hv20_1y_pct",
+      "source": "futures",
+      "function": "risk",
+      "direction": "higher_reduces_position",
+      "use_for": [
+        "filter",
+        "risk"
+      ],
+      "lag_months": 0,
+      "note": "高波动环境下执行前降仓。"
+    }
+  ],
+  "feature_gap_recommendations": [
+    "必须补充：可稳定更新的库存和存栏数据。",
+    "强烈建议：仓单、基差和期限结构的统一口径数据。",
+    "可选增强：相关品种成本和替代需求数据。"
+  ],
+  "feature_gate": {
+    "accepted": true,
+    "violations": [],
+    "feature_count": 4
+  },
+  "outright_labels": {
+    "target": "future_1m_tradable_contract_return",
+    "entry_rule": "信号月末后下一交易日",
+    "exit_rule": "下个月月末附近最后可用交易日",
+    "contract_filter": {
+      "min_entry_volume": 1000.0,
+      "min_entry_oi": 5000.0,
+      "delist_buffer_days": 20
+    }
+  },
+  "calendar_labels": {
+    "target": "real_pair_spread_return",
+    "spread": "front_price - forward_price",
+    "position_positive": "多近月空远月"
+  },
+  "volatility_features": {
+    "index_price": "volume_weighted_contract_close",
+    "risk_metrics": [
+      "hv20",
+      "hv60",
+      "hv20_1y_pct"
+    ]
+  }
+}

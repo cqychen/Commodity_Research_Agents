@@ -1,0 +1,7 @@
+key,value
+model,light RandomForest single-leg + calendar spread v3 expert-rule model
+single_max_leverage,0.5
+calendar_max_leverage,1.5
+route_name,broad_light_rf_single_calendar_v3
+light_rf_source,/home/ubuntu/farmer/china_mm_index/线上预测/light_rf_calendar_v3_trading_system/output_light_random_forest
+calendar_v3_source,/home/ubuntu/farmer/china_mm_index/线上预测/light_rf_calendar_v3_trading_system/output_calendar_spread_v3

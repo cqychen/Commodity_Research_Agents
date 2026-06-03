@@ -1,0 +1,5 @@
+name,source,function,direction,use_for,lag_months,note
+inventory_pressure,industry,driver/risk,higher_is_bearish,"['outright', 'calendar', 'state']",0,库存压力用于验证供需矛盾和多头风险。
+basis_strength,basis,valuation,higher_is_bullish,"['outright', 'calendar', 'state']",0,基差用于判断期货升贴水和期限结构赔率。
+profit_cycle,industry,driver,higher_is_bearish_forward_supply,"['outright', 'calendar']",1,利润影响后续供给扩张或收缩。
+hv20_1y_pct,futures,risk,higher_reduces_position,"['filter', 'risk']",0,高波动环境下执行前降仓。

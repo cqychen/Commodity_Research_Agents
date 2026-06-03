@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "policy_ok": false,
+  "recommend_promotion": false,
+  "result": {
+    "experiment_name": "egg_auto_model_experiment",
+    "experiment_type": "model_experiment",
+    "success": true,
+    "candidate_model": {
+      "model_type": "linear_ensemble",
+      "features": [
+        {
+          "name": "inventory_pressure",
+          "weight": 0.35,
+          "lag_months": 0
+        },
+        {
+          "name": "basis_strength",
+          "weight": 0.35,
+          "lag_months": 0
+        },
+        {
+          "name": "profit_cycle",
+          "weight": 0.2,
+          "lag_months": 1
+        },
+        {
+          "name": "hv20_1y_pct",
+          "weight": 0.1,
+          "lag_months": 0
+        }
+      ],
+      "target": "outright_return_1m",
+      "risk_gating": {
+        "hv20_1y_pct_threshold": 0.45
+      }
+    },
+    "metric_delta": -0.015,
+    "generated_files": [
+      "experiment_result.json"
+    ],
+    "policy_checked": false
+  },
+  "stderr_preview": ""
+}

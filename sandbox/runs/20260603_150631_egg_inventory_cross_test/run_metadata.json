@@ -1,0 +1,7 @@
+{
+  "run_id": "20260603_150631_egg_inventory_cross_test",
+  "commodity_id": "egg",
+  "experiment_type": "feature_experiment",
+  "experiment_name": "inventory_cross_test",
+  "sandbox_only": true
+}
