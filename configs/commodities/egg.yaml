@@ -5,7 +5,6 @@ exchange: DCE
 prefix: egg
 standalone: true
 # Optional bootstrap reference only. The full workflow does not depend on this path.
-existing_system_path: ../鸡蛋/light_rf_calendar_v3_trading_system
 contract_multiplier: 10
 commission_per_hand: 6.0
 slippage_per_hand: 2.0
