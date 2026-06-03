@@ -13,7 +13,6 @@
 ## 安装
 
 ```bash
-cd /home/ubuntu/farmer/china_mm_index/single_commodity_research_agents
 python -m pip install -e .
 ```
 
